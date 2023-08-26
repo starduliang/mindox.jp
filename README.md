@@ -1,0 +1,1 @@
+# mindox.jp
