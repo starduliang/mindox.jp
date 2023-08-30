@@ -1,3 +1,3 @@
-const News = () => <div>News</div>;
+const News = () => <div>News</div>
 
-export default News;
+export default News

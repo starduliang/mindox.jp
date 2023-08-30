@@ -1,3 +1,3 @@
-const Works = () => <div>Works</div>;
+const Works = () => <div>Works</div>
 
-export default Works;
+export default Works

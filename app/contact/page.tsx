@@ -1,3 +1,3 @@
-const Contact = () => <div>Contact</div>;
+const Contact = () => <div>Contact</div>
 
-export default Contact;
+export default Contact
