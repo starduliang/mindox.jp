@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "code:format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "code:lint": "eslint . --ext .ts,.js,.tsx,.jsx",
+    "code:lint": "next lint",
     "code:tsc": "tsc",
     "nuke": "rm -rf node_modules"
   },
