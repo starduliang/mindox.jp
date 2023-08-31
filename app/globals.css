@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+  .header-link {
+    @apply hover:text-gray-400 transform transition duration-500
+  }
+}
