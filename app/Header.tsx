@@ -18,16 +18,16 @@ const links: { name: string; href: string }[] = [
 ]
 
 const Header = () => (
-  <div className="border-b border-gray-800">
-    <div className="p-2 max-w-screen-xl mx-auto flex justify-between items-center ">
+  <header className="border-b border-[color-border]">
+    <div className="p-2 --center-content-container flex justify-between items-center ">
       <div className="flex gap-[80px] items-center">
-        <div>
+        <Link href={'/'}>
           <Image src="/logo.png" alt="Mindox Logo" width={260} height={58} priority />
-        </div>
+        </Link>
         <ul className="flex gap-8">
           {links.map(({ name, href }) => (
             <li key={name}>
-              <Link href={href} className="p-6 header-link">
+              <Link href={href} className="p-6 hover:text-gray-400 --link">
                 {name}
               </Link>
             </li>
@@ -35,12 +35,15 @@ const Header = () => (
         </ul>
       </div>
       <div>
-        <Link href={'/contact'} className="p-6 header-link">
+        <Link href={'/contact'} className="p-6 hover:text-gray-400 --link">
           Contact
         </Link>
       </div>
     </div>
-  </div>
+    <div className="fixed -translate-x-1/2 rotate-90 top-1/2 left-[4%] tracking-widest text-xs text-[color-text-gray]">
+      Copyright © Mindox All Rights Reserved.
+    </div>
+  </header>
 )
 
 export default Header

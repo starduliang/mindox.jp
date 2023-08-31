@@ -18,16 +18,21 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer components {
-  .header-link {
-    @apply hover:text-gray-400 transform transition duration-500
+  .--link {
+    @apply transform transition duration-500
+  }
+
+  .--center-content-container {
+    @apply max-w-screen-xl mx-auto
+  }
+
+  .--body-divider {
+    @apply content-[''] w-[1px] h-full absolute left-[8.35%] top-0 bg-[color-border] mix-blend-exclusion z-10
   }
 }
