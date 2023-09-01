@@ -3,7 +3,7 @@ const items: string[] = ['Advancing', 'Through', 'Emerging Tech', '進化する�
 export default function Home() {
   return (
     <main>
-      <section className="absolute w-[83.2%] left-1/2 transform -translate-x-1/2 top-[155px] z-10 font-san">
+      <section className="--absolute-x-center w-[83.2%] top-[155px] z-10">
         <ul className="text-[3.125vw]">
           {items.slice(0, 3).map((item, i) => (
             <li key={i} className="font-semibold">

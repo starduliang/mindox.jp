@@ -22,7 +22,7 @@ const Header = () => (
     <div className="p-2 --center-content-container flex justify-between items-center ">
       <div className="flex gap-[80px] items-center">
         <Link href={'/'}>
-          <Image src="/logo.png" alt="Mindox Logo" width={260} height={58} priority />
+          <Image src="/logo_text.png" alt="Mindox Logo" width={260} height={58} priority />
         </Link>
         <ul className="flex gap-8">
           {links.map(({ name, href }) => (

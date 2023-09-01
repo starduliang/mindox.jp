@@ -35,4 +35,8 @@ body {
   .--body-divider {
     @apply content-[''] w-[1px] h-full absolute left-[8.35%] top-0 bg-[color-border] mix-blend-exclusion z-10
   }
+
+  .--absolute-x-center {
+    @apply absolute left-1/2 -translate-x-1/2
+  }
 }
