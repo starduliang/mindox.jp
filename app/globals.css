@@ -36,6 +36,10 @@ body {
     @apply content-[''] w-[1px] h-full absolute left-[8.35%] top-0 bg-[color-border] mix-blend-exclusion z-10
   }
 
+  .--header-bg-mask {
+    @apply content-[''] w-full h-full absolute left-0 top-0 bg-gradient-to-r from-[#1b1b1bb3] to-[#1b1b1b00] -z-10
+  }
+
   .--absolute-x-center {
     @apply absolute left-1/2 -translate-x-1/2
   }
