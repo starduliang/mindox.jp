@@ -18,7 +18,7 @@ const links: { name: string; href: string }[] = [
 ]
 
 const Header = () => (
-  <header className="border-b border-[color-border] fixed w-full before:--header-bg-mask">
+  <header className="border-b border-[color-border] fixed top-0 w-full before:--header-bg-mask">
     <div className="p-2 --center-content-container flex justify-between items-center ">
       <div className="flex gap-[80px] items-center">
         <Link href={'/'}>
