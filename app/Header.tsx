@@ -14,6 +14,10 @@ const links: { name: string; href: string }[] = [
   {
     name: 'News',
     href: '/news'
+  },
+  {
+    name: 'Articles',
+    href: '/articles'
   }
 ]
 

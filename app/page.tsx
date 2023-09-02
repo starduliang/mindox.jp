@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <div className="flex justify-end">
           <figure className="w-[63vw]">
-            <Image src="/20230901_0.jpeg" alt={''} layout="responsive" width={500} height={300} />
+            <Image src="/20230901_0.jpeg" alt={'banner image'} width={500} height={300} />
           </figure>
         </div>
       </section>
