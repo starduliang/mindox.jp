@@ -1,6 +1,6 @@
-const ArticleLayout = ({ children }: { children: React.ReactNode }) => (
-  <div className="--center-content-container mt-[100px]">
-    <article className="prose dark:prose-invert w-full">{children}</article>
-  </div>
+import cn from 'classnames'
+
+const ArticleLayout = ({ className, children }: { className?: string; children: React.ReactNode }) => (
+  <article className={cn('prose dark:prose-invert w-full', className ?? '')}>{children}</article>
 )
 export default ArticleLayout
