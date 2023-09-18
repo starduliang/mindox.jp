@@ -4,6 +4,18 @@ import CssBaseline from '@mui/material/CssBaseline'
 const darkTheme = createTheme({
   palette: {
     mode: 'dark'
+  },
+  components: {
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          '&.Mui-focused': {
+            // TODO refactor
+            color: '#4b68da' // primary
+          }
+        }
+      }
+    }
   }
 })
 
