@@ -4,7 +4,7 @@ import { Button, Container, Stack, TextField, Typography } from '@mui/material'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import commonValidation from '@/lib/commonValidation'
+import { PATTERNS, MESSAGES } from '@/lib/validation'
 import Theme from '@/components/Theme'
 
 interface ValuesType {
@@ -17,13 +17,30 @@ interface ValuesType {
 }
 
 const validationSchema = yup.object({
-  companyName: commonValidation.REQUIRED,
-  tel: commonValidation.REQUIRED,
-  lastName: commonValidation.REQUIRED,
-  firstName: commonValidation.REQUIRED,
-  email: commonValidation.EMAIL,
-  inquiryDetails: commonValidation.REQUIRED
+  companyName: PATTERNS.REQUIRED,
+  tel: PATTERNS.TEL.required(MESSAGES.REQUIRED),
+  lastName: PATTERNS.REQUIRED,
+  firstName: PATTERNS.REQUIRED,
+  email: PATTERNS.EMAIL.required(MESSAGES.REQUIRED),
+  inquiryDetails: PATTERNS.REQUIRED
 })
+
+interface FormField {
+  name: string
+  label: string
+  type: string
+  multiline?: boolean
+  rows?: number
+}
+
+const formFields: FormField[] = [
+  { name: 'companyName', label: '会社名', type: 'text' },
+  { name: 'tel', label: '電話番号', type: 'text' },
+  { name: 'lastName', label: 'お名前（姓）', type: 'text' },
+  { name: 'firstName', label: 'お名前（名）', type: 'text' },
+  { name: 'email', label: 'メールアドレス', type: 'email' },
+  { name: 'inquiryDetails', label: 'お問い合わせ内容*', type: 'text', multiline: true, rows: 4 }
+]
 
 const Contact = () => {
   const {
@@ -31,7 +48,8 @@ const Contact = () => {
     handleSubmit,
     formState: { errors }
   } = useForm<ValuesType>({
-    resolver: yupResolver(validationSchema)
+    resolver: yupResolver(validationSchema),
+    mode: 'onBlur'
   })
 
   const onSubmit: SubmitHandler<ValuesType> = (values) => {
@@ -46,57 +64,23 @@ const Contact = () => {
           お問い合わせ時間：10:00～17:00　電話番号：070 1321 1199　採用担当まで
         </Typography>
         <Stack spacing={3} className="mt-16">
-          <TextField
-            required
-            label="会社名"
-            variant="outlined"
-            {...register('companyName')}
-            error={'companyName' in errors}
-            helperText={errors.companyName?.message}
-          />
-          <TextField
-            required
-            label="電話番号"
-            variant="outlined"
-            {...register('tel')}
-            error={'tel' in errors}
-            helperText={errors.tel?.message}
-          />
-          <TextField
-            required
-            label="お名前（姓）"
-            variant="outlined"
-            {...register('lastName')}
-            error={'lastName' in errors}
-            helperText={errors.lastName?.message}
-          />
-          <TextField
-            required
-            label="お名前（名）"
-            variant="outlined"
-            {...register('firstName')}
-            error={'firstName' in errors}
-            helperText={errors.firstName?.message}
-          />
-          <TextField
-            required
-            label="メールアドレス"
-            variant="outlined"
-            type="email"
-            {...register('email')}
-            error={'email' in errors}
-            helperText={errors.email?.message}
-          />
-          <TextField
-            required
-            label="お問い合わせ内容*"
-            variant="outlined"
-            {...register('inquiryDetails')}
-            error={'inquiryDetails' in errors}
-            helperText={errors.inquiryDetails?.message}
-            multiline
-            rows={4}
-          />
+          {formFields.map(({ name, label, type, multiline, rows }) => {
+            const key = name as keyof ValuesType
+            return (
+              <TextField
+                key={name}
+                required
+                label={label}
+                variant="outlined"
+                type={type}
+                {...register(key)}
+                error={!!errors[key]}
+                helperText={errors[key]?.message}
+                multiline={multiline}
+                rows={rows}
+              />
+            )
+          })}
         </Stack>
         <div className="mt-6 text-center">
           <Button
