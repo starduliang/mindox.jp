@@ -1,25 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const links: { name: string; href: string }[] = [
-  { name: 'Company', href: '/company' },
-  {
-    name: 'Service',
-    href: '/service'
-  },
-  {
-    name: 'Works',
-    href: '/works'
-  },
-  {
-    name: 'News',
-    href: '/news'
-  },
-  {
-    name: 'Articles',
-    href: '/articles'
-  }
-]
+import links from '@/config/links'
+
+const headerLinks = links.filter((link) => ['Company', 'Service', 'Works', 'News', 'Articles'].includes(link.name))
 
 const Header = () => (
   <header className="border-b border-[color-border] fixed top-0 w-full before:--header-bg-mask">
@@ -29,7 +13,7 @@ const Header = () => (
           <Image src="/logo_text.png" alt="Mindox Logo" width={260} height={58} priority />
         </Link>
         <ul className="flex gap-8">
-          {links.map(({ name, href }) => (
+          {headerLinks.map(({ name, href }) => (
             <li key={name}>
               <Link href={href} className="p-6 hover:text-gray-400 --link">
                 {name}
