@@ -2,17 +2,16 @@
 import { Typography, Breadcrumbs, Link as MUILink } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import NextLink from 'next/link'
-import TableOfContents from '@/components/articles/TableOfContents'
 import Theme from '@/components/Theme'
 
 import ArticleLayout from '@/components/articles/ArticleLayout'
-
-const CONTENT_ID = 'article'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname()
   const articleName = pathname.split('/').slice(-1)?.[0] ?? ''
   const isSelf = articleName === 'articles'
+
+  const showTableOfContents = pathname !== '/articles'
 
   return (
     <Theme>
@@ -28,8 +27,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           )}
           <Typography color="text.primary">{articleName}</Typography>
         </Breadcrumbs>
-        <TableOfContents contentId={CONTENT_ID} />
-        <ArticleLayout contentId={CONTENT_ID} className="mt-8">
+        <ArticleLayout className="mt-8" showTableOfContents={showTableOfContents}>
           {children}
         </ArticleLayout>
       </div>

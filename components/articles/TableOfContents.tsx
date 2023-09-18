@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 interface TableOfContentsItem {
   id: string
@@ -9,11 +10,12 @@ interface TableOfContentsItem {
 
 const TableOfContents = ({ contentId }: { contentId: string }) => {
   const [headers, setHeaders] = useState<TableOfContentsItem[]>([])
+  const pathname = usePathname()
 
   useEffect(() => {
     const processedHeaders = processHeaders(contentId)
     setHeaders(processedHeaders)
-  }, [contentId])
+  }, [pathname, contentId])
 
   const renderTableOfContents = (items: TableOfContentsItem[]) => (
     <ul className="list-disc ml-4">
