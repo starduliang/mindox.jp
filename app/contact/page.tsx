@@ -1,13 +1,13 @@
 'use client'
 
-import { Button, Container, Stack, TextField, Typography } from '@mui/material'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { Container, Stack, TextField, Typography } from '@mui/material'
+import { LoadingButton } from '@mui/lab'
+import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { PATTERNS, MESSAGES } from '@/lib/validation'
 import Theme from '@/components/config/Theme'
-import { useToast } from '@/components/contexts/ToastContext'
-import { useProgress } from '@/components/contexts/ProgressContext'
+import { useSubmitForm } from '@/components/hooks/useSubmitForm'
 
 interface ValuesType {
   companyName: string
@@ -45,8 +45,6 @@ const formFields: FormField[] = [
 ]
 
 const Contact = () => {
-  const { showToast } = useToast()
-  const { isInProgress, startProgress, endProgress } = useProgress()
   const {
     register,
     handleSubmit,
@@ -57,22 +55,10 @@ const Contact = () => {
   })
 
   // TODO add api call
-  const onSubmit: SubmitHandler<ValuesType> = async (values) => {
-    if (isInProgress) return
-    try {
-      alert(isInProgress)
-      startProgress()
-      await new Promise((resolve) => setTimeout(resolve, 2000)) // Simulate API call
-      alert(isInProgress)
-      console.log(values)
-      showToast('success!')
-    } catch (error) {
-      console.error(error)
-      showToast('An error occurred!')
-    } finally {
-      endProgress()
-    }
-  }
+  const { onSubmit, isInProgress } = useSubmitForm(async (values) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000)) // Simulate API call
+    console.log(values)
+  }, 'success!')
 
   return (
     <Theme>
@@ -101,15 +87,15 @@ const Contact = () => {
           })}
         </Stack>
         <div className="mt-6 text-center">
-          <Button
+          <LoadingButton
             variant="contained"
             size="large"
             onClick={handleSubmit(onSubmit)}
             className="bg-[color-primary] px-12 text-white font-bold"
-            disabled={isInProgress}
+            loading={isInProgress}
           >
-            {isInProgress ? 'Loading...' : '送信'}
-          </Button>
+            送信
+          </LoadingButton>
         </div>
       </Container>
     </Theme>
