@@ -5,7 +5,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { PATTERNS, MESSAGES } from '@/lib/validation'
-import Theme from '@/components/Theme'
+import Theme from '@/components/config/Theme'
+import { useToast } from '@/components/contexts/ToastContext'
 
 interface ValuesType {
   companyName: string
@@ -43,6 +44,7 @@ const formFields: FormField[] = [
 ]
 
 const Contact = () => {
+  const { showToast } = useToast()
   const {
     register,
     handleSubmit,
@@ -52,8 +54,12 @@ const Contact = () => {
     mode: 'onBlur'
   })
 
+  // TODO add api call
   const onSubmit: SubmitHandler<ValuesType> = (values) => {
-    console.log(values)
+    setTimeout(() => {
+      console.log(values)
+      showToast('success!')
+    }, 2000)
   }
 
   return (

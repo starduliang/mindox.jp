@@ -1,4 +1,4 @@
-import links from '@/config/links'
+import links from '@/components/config/links'
 import Link from 'next/link'
 import Image from 'next/image'
 

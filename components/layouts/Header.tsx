@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import links from '@/config/links'
+import links from '@/components/config/links'
 
 const headerLinks = links.filter((link) => ['Company', 'Service', 'Works', 'News', 'Articles'].includes(link.name))
 

@@ -2,9 +2,9 @@
 import { Typography, Breadcrumbs, Link as MUILink } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import NextLink from 'next/link'
-import Theme from '@/components/Theme'
+import Theme from '@/components/config/Theme'
 
-import ArticleLayout from '@/components/articles/ArticleLayout'
+import ArticleLayout from '@/components/layouts/articles/ArticleLayout'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname()
