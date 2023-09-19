@@ -62,7 +62,7 @@ const Contact = () => {
 
   return (
     <Theme>
-      <Container maxWidth="md" className="mt-40 py-24 px-24 rounded-xl bg-[#181818]">
+      <Container maxWidth="md" className="mt-40 py-24 px-8 md:px-24 rounded-md bg-[#181818]">
         <Typography>
           オフィスの見学、インターンシップ、採用に関するお問い合わせなどは下記フォームまたはお電話にてお気軽にご連絡ください。
           お問い合わせ時間：10:00～17:00　電話番号：070 1321 1199　採用担当まで

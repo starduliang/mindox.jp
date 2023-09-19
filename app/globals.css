@@ -25,7 +25,30 @@ body {
 
 @layer components {
   .--link {
-    @apply transform transition duration-500
+    @apply transform transition-all duration-500 ease-in-out
+  }
+
+  .--link:hover {
+    @apply text-[color-primary]
+  }
+
+  .--link-enhanced {
+    @apply --link
+  }
+
+  .--link-enhanced:hover {
+    @apply scale-110 text-[color-primary];
+  }
+
+  .--link-enhanced::after {
+    content: '>';
+    @apply invisible absolute right-6 transform translate-x-full;
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .--link-enhanced:hover::after {
+    @apply visible;
+    @apply -translate-x-0;
   }
 
   .--center-content-container {

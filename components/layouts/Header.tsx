@@ -15,7 +15,7 @@ const Header = () => (
         <ul className="flex gap-8">
           {headerLinks.map(({ name, href }) => (
             <li key={name}>
-              <Link href={href} className="p-6 hover:text-gray-400 --link">
+              <Link href={href} className="p-6 --link">
                 {name}
               </Link>
             </li>
@@ -23,7 +23,7 @@ const Header = () => (
         </ul>
       </div>
       <div>
-        <Link href={'/contact'} className="p-6 hover:text-gray-400 --link">
+        <Link href={'/contact'} className="p-6 --link">
           Contact
         </Link>
       </div>

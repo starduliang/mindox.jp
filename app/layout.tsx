@@ -13,7 +13,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={cn(inter.className, 'before:--body-divider')}>
         <AppProvider>
-          <Header></Header>
+          <Header />
           {children}
           <Footer />
         </AppProvider>
