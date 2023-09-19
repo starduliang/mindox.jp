@@ -1,5 +1,5 @@
 'use client'
-import { Typography, Breadcrumbs, Link as MUILink } from '@mui/material'
+import { Typography, Breadcrumbs, Link as MUILink, Container } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import NextLink from 'next/link'
 import Theme from '@/components/config/Theme'
@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <Theme>
-      <div className="--center-content-container mt-[100px] p-4">
+      <Container maxWidth="md" className="mt-[100px] p-4">
         <Breadcrumbs aria-label="breadcrumb">
           <MUILink underline="hover" color="inherit" href="/" component={NextLink}>
             Home
@@ -30,7 +30,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <ArticleLayout className="mt-8" showTableOfContents={showTableOfContents}>
           {children}
         </ArticleLayout>
-      </div>
+      </Container>
     </Theme>
   )
 }

@@ -1,4 +1,3 @@
-import cn from 'classnames'
 import TableOfContents from './TableOfContents'
 
 const CONTENT_ID = 'article'
@@ -12,11 +11,15 @@ const ArticleLayout = ({
   children: React.ReactNode
   showTableOfContents?: boolean
 }) => (
-  <>
-    {showTableOfContents && <TableOfContents contentId={CONTENT_ID} />}
-    <article id={CONTENT_ID} className={cn('prose dark:prose-invert w-full', className ?? '')}>
+  <div className={className}>
+    {showTableOfContents && (
+      <div>
+        <TableOfContents contentId={CONTENT_ID} />
+      </div>
+    )}
+    <article id={CONTENT_ID} className={'prose dark:prose-invert w-full mt-8'}>
       {children}
     </article>
-  </>
+  </div>
 )
 export default ArticleLayout

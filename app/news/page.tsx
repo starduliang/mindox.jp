@@ -1,14 +1,13 @@
 'use client'
 
 const News = () => (
-  <div>
-    <div className="--center-content-container mt-[100px]">
-      <article className="prose dark:prose-invert w-full">
-        <HelloWorld />
-      </article>
-    </div>
-  </div>
+  <Container maxWidth="md" className="mt-[100px]">
+    <article className="prose dark:prose-invert w-full">
+      <HelloWorld />
+    </article>
+  </Container>
 )
 
+import { Container } from '@mui/material'
 import HelloWorld from './helloworld.mdx'
 export default News

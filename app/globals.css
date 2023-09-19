@@ -42,13 +42,13 @@ body {
 
   .--link-enhanced::after {
     content: '>';
-    @apply invisible absolute right-6 transform translate-x-full;
+    @apply invisible absolute right-0 transform translate-x-full;
     @apply transition-all duration-300 ease-in-out;
   }
 
   .--link-enhanced:hover::after {
     @apply visible;
-    @apply -translate-x-0;
+    @apply -translate-x-6;
   }
 
   .--center-content-container {

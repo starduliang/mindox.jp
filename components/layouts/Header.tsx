@@ -23,7 +23,7 @@ const Header = () => (
         </ul>
       </div>
       <div>
-        <Link href={'/contact'} className="p-6 --link">
+        <Link href={'/contact'} className="p-6 --link-enhanced">
           Contact
         </Link>
       </div>
