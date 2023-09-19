@@ -10,10 +10,10 @@ export function useSubmitForm(callback: (values: any) => Promise<void>, successM
     try {
       startProgress()
       await callback(values)
-      showToast(successMessage)
+      showToast({ text: successMessage, type: 'success' })
     } catch (error) {
       console.error(error)
-      showToast('An error occurred!')
+      showToast({ text: 'An error occurred!', type: 'error' })
     } finally {
       endProgress()
     }
