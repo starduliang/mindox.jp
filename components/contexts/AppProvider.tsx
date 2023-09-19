@@ -1,5 +1,10 @@
 import { ToastProvider } from './ToastContext'
+import { ProgressProvider } from './ProgressContext'
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  return <ToastProvider>{children}</ToastProvider>
+  return (
+    <ToastProvider>
+      <ProgressProvider>{children}</ProgressProvider>
+    </ToastProvider>
+  )
 }
