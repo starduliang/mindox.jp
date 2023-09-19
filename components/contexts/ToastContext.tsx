@@ -40,7 +40,12 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <ToastContext.Provider value={{ showToast, hideToast }}>
       {children}
-      <Snackbar open={isOpen} autoHideDuration={3000} onClose={hideToast}>
+      <Snackbar
+        open={isOpen}
+        autoHideDuration={3000}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        onClose={hideToast}
+      >
         <div>
           <Alert onClose={hideToast} severity={message?.type ?? 'success'}>
             {message?.text}
