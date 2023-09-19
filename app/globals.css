@@ -32,6 +32,10 @@ body {
     @apply text-[color-primary]
   }
 
+  .--link.--active {
+    @apply text-[color-primary]
+  }
+
   .--link-enhanced {
     @apply --link
   }

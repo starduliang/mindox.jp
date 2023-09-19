@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^3.3.1",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
+    "@mui/icons-material": "^5.14.9",
     "@mui/lab": "^5.0.0-alpha.145",
     "@mui/material": "^5.14.7",
     "@next/mdx": "^13.4.19",
@@ -26,6 +27,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "classnames": "^2.3.2",
+    "lodash": "^4.17.21",
     "next": "13.4.19",
     "postcss": "8.4.28",
     "react": "18.2.0",
@@ -38,6 +40,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.6",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/lodash": "^4.14.198",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "eslint": "8.48.0",

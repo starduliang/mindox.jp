@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import ContactSupportIcon from '@mui/icons-material/ContactSupport'
 
 import links from '@/components/config/links'
 
@@ -23,7 +24,8 @@ const Header = () => (
         </ul>
       </div>
       <div>
-        <Link href={'/contact'} className="p-6 --link-enhanced">
+        <Link href={'/contact'} className="flex p-6 --link-enhanced items-center gap-2">
+          <ContactSupportIcon />
           Contact
         </Link>
       </div>
