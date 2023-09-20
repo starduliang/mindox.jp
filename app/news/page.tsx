@@ -1,15 +1,14 @@
 'use client'
 
 const News = () => (
-  <Container maxWidth="md" className="mt-56">
-    <PageNav title="News List" subTitle="お知らせ" />
-    <article className="prose dark:prose-invert w-full">
+  <main>
+    <PageNav title="News List" subTitle="お知らせ" pathToName={{ news: 'News List' }} />
+    <article className="prose dark:prose-invert w-full mt-16">
       <HelloWorld />
     </article>
-  </Container>
+  </main>
 )
 
-import { Container } from '@mui/material'
 import HelloWorld from './helloworld.mdx'
 import PageNav from '@/components/layouts/PageNav'
 export default News

@@ -23,12 +23,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const article = articles.find((article) => String(article.id) === String(id))
 
   return (
-    <Container maxWidth="md" className="mt-56 p-4">
+    <main>
       <PageNav title="Articles" subTitle="技術ブログ" pathToName={pathToName} />
       <Article data={article!} className="mt-8" showTableOfContents={showTableOfContents}>
         {children}
       </Article>
-    </Container>
+    </main>
   )
 }
 

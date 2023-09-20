@@ -6,6 +6,7 @@ import Footer from '@/components/layouts/Footer'
 import { Metadata } from 'next'
 import { AppProvider } from '@/components/contexts/AppProvider'
 import Theme from '@/components/config/Theme'
+import { Container } from '@mui/material'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Theme>
           <AppProvider>
             <Header />
-            {children}
+            <Container maxWidth="md" className="mt-56">
+              {children}
+            </Container>
             <Footer className="mt-48" />
           </AppProvider>
         </Theme>
