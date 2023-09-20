@@ -17,7 +17,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <AppProvider>
             <Header />
             {children}
-            <Footer />
+            <Footer className="mt-48" />
           </AppProvider>
         </Theme>
       </body>

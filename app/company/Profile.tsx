@@ -5,7 +5,7 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableRow from '@mui/material/TableRow'
 
-function createData(name: string, value: string) {
+function createData(name: string, value: React.ReactNode | string) {
   return { name, value }
 }
 
@@ -17,13 +17,19 @@ const rows = [
   createData('资本金', '300万円'),
   createData(
     '事業内容',
-    'コンピュータのソフトウェアの企画、研究、開発、設計、製造、販売、保守、リース並びにそれらに関するコンサルティング業務\n\nインターネット等の通信ネットワーク、電子技術を利用した各種情報提供サービス及び情報収集サービス\n\n前（各）号に附帯関連する一切の事業'
+    <div className="flex flex-col gap-3">
+      <p>
+        コンピュータのソフトウェアの企画、研究、開発、設計、製造、販売、保守、リース並びにそれらに関するコンサルティング業務
+      </p>
+      <p>インターネット等の通信ネットワーク、電子技術を利用した各種情報提供サービス及び情報収集サービス</p>
+      <p>前（各）号に附帯関連する一切の事業</p>
+    </div>
   )
 ]
 
-const Profile = ({ className }: { className?: string }) => {
+const Profile = () => {
   return (
-    <section className={className ?? ''}>
+    <div>
       <h1 className="text-center text-7xl font-bold"> Company Profile</h1>
       <h2 className="mt-4 text-center text-lg">会社概要</h2>
       <TableContainer className="bg-transparent mt-20">
@@ -31,24 +37,18 @@ const Profile = ({ className }: { className?: string }) => {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.name}>
-                <TableCell component="th">
-                  <div className="py-4 w-32 text-base">{row.name}</div>
+                <TableCell component="th" className="border-b border-gray-400 border-b-1">
+                  <div className="py-4 w-24 md:w-48 text-base">{row.name}</div>
                 </TableCell>
                 <TableCell>
-                  <div className="py-4 text-base">
-                    {row.value.split('\n').map((line, index) => (
-                      <p className="py-1 " key={index}>
-                        {line}
-                      </p>
-                    ))}
-                  </div>
+                  <div className="py-4 text-base">{row.value}</div>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-    </section>
+    </div>
   )
 }
 

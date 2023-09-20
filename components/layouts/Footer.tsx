@@ -11,13 +11,13 @@ const linkGroups = [
   ['Works', 'News', 'Contact']
 ].map((group) => links.filter((link) => group.includes(link.name)))
 
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
   const theme = useTheme()
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Container maxWidth="md" className="gap-10">
-      <div className="text-left grid grid-cols-1 md:grid-cols-3 text-4xl mt-24">
+    <Container maxWidth="md" className={'gap-10 ' + className}>
+      <div className="text-left grid grid-cols-1 md:grid-cols-3 text-4xl">
         <div className="py-4 px-8">
           <Link href={'/'}>
             <Image
