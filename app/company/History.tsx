@@ -1,11 +1,10 @@
 import React from 'react'
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab'
-import { Typography } from '@mui/material'
 
 const History = (): JSX.Element => {
   const timelineData = [
-    { year: '2023.3', event: '社員採用' },
-    { year: '2022.9', event: '会社設立' }
+    { yearMonth: '2023.3', event: '社員採用' },
+    { yearMonth: '2022.9', event: '会社設立' }
   ]
 
   return (
@@ -29,11 +28,9 @@ const History = (): JSX.Element => {
               )}
             </TimelineSeparator>
             <TimelineContent>
-              <div className="p-6 mb-1 border bg-transparent border-[color-border] border-1 rounded">
-                <Typography variant="h6" component="span">
-                  {item.year}
-                </Typography>
-                <Typography>{item.event}</Typography>
+              <div className="p-6 mb-1 border bg-transparent border-[color-border] border-1 rounded text-center">
+                <p className="text-3xl">{item.yearMonth}</p>
+                <p className="mt-2">{item.event}</p>
               </div>
             </TimelineContent>
           </TimelineItem>
