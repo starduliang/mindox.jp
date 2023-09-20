@@ -33,7 +33,7 @@ body {
   }
 
   .--link.--active {
-    @apply text-[color-primary]
+    @apply text-white
   }
 
   .--link-enhanced {
