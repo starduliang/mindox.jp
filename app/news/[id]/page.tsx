@@ -15,7 +15,7 @@ const Page = ({ params }: { params: { id: string } }) => {
 
   return (
     <main>
-      <BreadCrumbs pathname={pathname} pathToName={{ [post.id ?? '']: post.title }} />
+      <BreadCrumbs pathname={pathname} pathToName={{ [post.id ?? '']: post.title, news: 'News List' }} />
       <div className="bg-[color-bg-dark] p-16 mt-8">
         <Post data={post!} className="mt-8" />
       </div>
