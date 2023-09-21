@@ -63,7 +63,7 @@ const Contact = () => {
   return (
     <main>
       <PageNav title="Contact" subTitle="問い合わせ" />
-      <div className="mt-24 py-24 px-8 md:px-24 rounded-md bg-[#181818]">
+      <div className="mt-24 py-24 px-8 md:px-24 rounded-md bg-[color-bg-dark]">
         <Typography className="mt-8">
           オフィスの見学、インターンシップ、採用に関するお問い合わせなどは下記フォームまたはお電話にてお気軽にご連絡ください。
           お問い合わせ時間：10:00～17:00 電話番号：070 1321 1199 採用担当まで
