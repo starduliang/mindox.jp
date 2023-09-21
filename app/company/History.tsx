@@ -29,8 +29,8 @@ const History = (): JSX.Element => {
             </TimelineSeparator>
             <TimelineContent>
               <div className="p-6 mb-1 --border bg-transparent rounded text-center">
-                <p className="text-3xl">{item.yearMonth}</p>
-                <p className="mt-2">{item.event}</p>
+                <p className="text-2xl md:text-3xl">{item.yearMonth}</p>
+                <p className="text-sm md:text-base mt-2">{item.event}</p>
               </div>
             </TimelineContent>
           </TimelineItem>

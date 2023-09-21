@@ -12,7 +12,7 @@ const ContactCard = () => (
     <div className="--border p-12 text-center">
       <p>メールでのお問い合わせ</p>
       <p className="text-sm mt-2">※Webフォームにてご連絡承ります</p>
-      <p className="text-6xl mt-6 relative">
+      <p className="text-4xl md:text-6xl mt-6 relative">
         <Link className="--link" href="/contact">
           Contact Us
         </Link>
@@ -21,7 +21,7 @@ const ContactCard = () => (
     <div className="--border p-12 text-center">
       <p>電話でのお問い合わせ</p>
       <p className="text-sm mt-2">※平日 10:00～17:00</p>
-      <p className="text-6xl mt-6">070-1321-1199</p>
+      <p className="text-4xl md:text-6xl mt-6">070-1321-1199</p>
     </div>
   </div>
 )
