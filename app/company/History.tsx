@@ -28,7 +28,7 @@ const History = (): JSX.Element => {
               )}
             </TimelineSeparator>
             <TimelineContent>
-              <div className="p-6 mb-1 border bg-transparent border-[color-border] border-1 rounded text-center">
+              <div className="p-6 mb-1 --border bg-transparent rounded text-center">
                 <p className="text-3xl">{item.yearMonth}</p>
                 <p className="mt-2">{item.event}</p>
               </div>

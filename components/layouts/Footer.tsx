@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from '@mui/material'
 import { useMediaQuery, useTheme } from '@mui/material'
+import ContactCard from '@/app/contact/ContactCard'
 
 const linkGroups = [
   ['Company', 'Service'],
@@ -16,7 +17,8 @@ const Footer = ({ className }: { className?: string }) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Container maxWidth="md" className={'gap-10 ' + className}>
+    <Container maxWidth="lg" className={'gap-10 flex flex-col gap-y-16 ' + className}>
+      <ContactCard />
       <div className="text-left grid grid-cols-1 md:grid-cols-3 text-4xl">
         <div className="py-4 px-8">
           <Link href={'/'}>

@@ -17,10 +17,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Theme>
           <AppProvider>
             <Header />
-            <Container maxWidth="md" className="mt-56">
+            <Container maxWidth="lg" className="mt-56">
               {children}
             </Container>
-            <Footer className="mt-48" />
+            <Footer className="mt-56" />
           </AppProvider>
         </Theme>
       </body>

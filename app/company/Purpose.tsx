@@ -34,7 +34,7 @@ const Purpose = () => {
   return (
     <div className={'grid md:grid-cols-3 gap-14 md:gap-4 '}>
       {groupData.map((group, index) => (
-        <div key={index} className="relative text-center p-6 rounded shadow border border-[color-border] border-1 ">
+        <div key={index} className="relative text-center p-6 rounded shadow --border">
           <div className="text-5xl absolute -top-8 right-4">{String(index + 1).padStart(2, '0')}</div>
           <h2 className="text-4xl font-bold">{group.title}</h2>
           <h3 className="text-lg mt-4">{group.subTitle}</h3>
