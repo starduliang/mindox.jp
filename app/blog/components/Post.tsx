@@ -1,5 +1,5 @@
 import TableOfContents from './TableOfContents'
-import { PostModal } from '../db'
+import { Post as PostModel } from '@/db/models/post'
 import dayjs from 'dayjs'
 
 const CONTENT_ID = 'article'
@@ -9,7 +9,7 @@ const Post = ({
   className,
   showTableOfContents
 }: {
-  data: PostModal
+  data: PostModel
   className?: string
   showTableOfContents?: boolean
 }) => {

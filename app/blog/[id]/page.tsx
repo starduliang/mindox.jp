@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 
 import Post from '@/app/blog/components/Post'
 import PageNav from '@/components/layouts/PageNav'
-import { posts } from '../db'
+import { posts } from '../../../db/data'
 
 const Page = ({ params }: { params: { id: string } }) => {
   const pathname = usePathname()

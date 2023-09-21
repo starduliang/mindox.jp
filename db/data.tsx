@@ -1,14 +1,8 @@
-import Post1 from '../../posts/1/page.mdx'
-import Post2 from '../../posts/2/page.mdx'
+import Post1 from '../posts/1/page.mdx'
+import Post2 from '../posts/2/page.mdx'
+import { Post } from './models/post'
 
-export type PostModal = {
-  id: string | number
-  title: string
-  content: React.ReactNode
-  createdAt: Date
-}
-
-export const posts: PostModal[] = [
+export const posts: Post[] = [
   {
     id: 1,
     title: 'Hello World',

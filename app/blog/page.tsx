@@ -3,7 +3,7 @@
 import dayjs from 'dayjs'
 import { List, ListItem } from '@mui/material'
 import PageNav from '@/components/layouts/PageNav'
-import { posts } from './db'
+import { posts } from '../../db/data'
 import Link from 'next/link'
 
 const Page = () => (
