@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ContactSupport as ContactSupportIcon, Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
+import { ContactSupport as ContactSupportIcon, Menu as MenuIcon } from '@mui/icons-material'
 import { Drawer, IconButton } from '@mui/material'
 import links from '@/components/config/links'
 
