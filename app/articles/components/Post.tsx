@@ -1,15 +1,15 @@
 import TableOfContents from './TableOfContents'
-import { ArticleModel } from '../db'
+import { PostModal } from '../db'
 import dayjs from 'dayjs'
 
 const CONTENT_ID = 'article'
 
-const Article = ({
+const Post = ({
   data,
   className,
   showTableOfContents
 }: {
-  data: ArticleModel
+  data: PostModal
   className?: string
   showTableOfContents?: boolean
 }) => {
@@ -30,4 +30,4 @@ const Article = ({
     </article>
   )
 }
-export default Article
+export default Post
