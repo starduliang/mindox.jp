@@ -29,8 +29,8 @@ const TableOfContents = ({ contentId }: { contentId: string }) => {
   )
 
   return (
-    <div className="table-of-contents">
-      <h3>Table of Contents</h3>
+    <div className="table-of-contents p-8 rounded flex flex-col gap-4 bg-[color-bg] --border-light">
+      <h3 className="font-semibold text-xl">Table of Contents</h3>
       {renderTableOfContents(headers)}
     </div>
   )

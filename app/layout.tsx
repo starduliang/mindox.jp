@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from '../components/layouts/Header'
+import Header from '@/components/layouts/Header'
 import cn from 'classnames'
 import Footer from '@/components/layouts/Footer'
 import { Metadata } from 'next'

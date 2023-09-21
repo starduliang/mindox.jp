@@ -1,21 +1,25 @@
 'use client'
 
 import dayjs from 'dayjs'
-import { List, ListItem } from '@mui/material'
+import { Card, CardContent, List, ListItem } from '@mui/material'
 import PageNav from '@/components/layouts/PageNav'
-import { posts } from '../../db/data'
+import { blogPosts } from '@/db/data'
 import Link from 'next/link'
 
 const Page = () => (
   <main className="flex flex-col gap-4">
     <PageNav title="Blog" subTitle="技術ブログ" />
-    <List>
-      {posts.map((item) => (
+    <List className="flex flex-col gap-y-4">
+      {blogPosts.map((item) => (
         <ListItem key={item.id}>
-          <Link className="--link " href={`/blog/${item.id}`}>
-            <span className="text-xl">{item?.title}</span>
+          <Link className="--link w-full" href={`/blog/${item.id}`}>
+            <Card className="bg-transparent p-2">
+              <CardContent className="flex ">
+                <div className="text-xl">{item?.title}</div>
+                <div className="ml-auto text-xs text-[color-text-gray]">{dayjs(item.createdAt).format('YY.MM.DD')}</div>
+              </CardContent>
+            </Card>
           </Link>
-          <span className="ml-auto text-xs text-[color-text-gray]">{dayjs(item.createdAt).format('YY.MM.DD')}</span>
         </ListItem>
       ))}
     </List>

@@ -74,4 +74,8 @@ body {
   .--border {
     @apply border border-[color-border]
   }
+
+  .--border-light {
+    @apply border border-[color-border-light]
+  }
 }
