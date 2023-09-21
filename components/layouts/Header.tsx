@@ -4,7 +4,7 @@ import ContactSupportIcon from '@mui/icons-material/ContactSupport'
 
 import links from '@/components/config/links'
 
-const headerLinks = links.filter((link) => ['Company', 'Service', 'Works', 'News', 'Articles'].includes(link.name))
+const headerLinks = links.filter((link) => ['Company', 'Service', 'Works', 'News', 'Blog'].includes(link.name))
 
 const Header = () => (
   <header className="border-b border-[color-border] fixed top-0 w-full before:--header-bg-mask">

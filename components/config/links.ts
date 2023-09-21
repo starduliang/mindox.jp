@@ -1,4 +1,4 @@
-type LinkName = 'Company' | 'Service' | 'Works' | 'News' | 'Articles' | 'Contact'
+type LinkName = 'Company' | 'Service' | 'Works' | 'News' | 'Blog' | 'Contact'
 
 const links: { name: LinkName; href: string }[] = [
   { name: 'Company', href: '/company' },
@@ -15,8 +15,8 @@ const links: { name: LinkName; href: string }[] = [
     href: '/news'
   },
   {
-    name: 'Articles',
-    href: '/articles'
+    name: 'Blog',
+    href: '/blog'
   },
   {
     name: 'Contact',
