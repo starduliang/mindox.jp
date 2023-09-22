@@ -1,16 +1,13 @@
 import cn from 'classnames'
 
-const ContainerBoarded = ({
-  className,
-  children,
-  color = '[color-border-lighter]'
-}: {
-  className?: string
-  children: React.ReactNode
-  color?: string
-}) => {
+const ContainerBoarded = ({ className, children }: { className?: string; children: React.ReactNode }) => {
   return (
-    <div className={cn(`border divide-y md:divide-y-0 md:divide-x divide-${color} border-${color}`, className)}>
+    <div
+      className={cn(
+        `border divide-y md:divide-y-0 md:divide-x divide-[color-border-lighter] border-[color-border-lighter]`,
+        className
+      )}
+    >
       {children}
     </div>
   )
