@@ -43,7 +43,7 @@ const Strength = () => (
       <div className="text-7xl font-bold">{data.title}</div>
       <div className="text-lg mt-4">{data.subtitle}</div>
     </div>
-    <ContainerBoarded className="grid grid-cols-1 md:grid-cols-3 mt-20" color="[color-border-lighter]">
+    <ContainerBoarded className="grid grid-cols-1 md:grid-cols-3 mt-20">
       {data.items.map((item, index) => (
         <div key={index} className="2 px-6 py-8 text-center">
           <h2 className="text-2xl font-bold">{item.title}</h2>
