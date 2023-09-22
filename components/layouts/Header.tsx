@@ -10,8 +10,8 @@ import links from '@/components/config/links'
 const headerLinks = links.filter((link) => ['Company', 'Service', 'Works', 'News', 'Blog'].includes(link.name))
 
 const Header = () => {
-  const [open, setOpen] = useState(false)
-  const toggleDrawer = () => setOpen(!open)
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleDrawer = () => setIsOpen(!isOpen)
 
   return (
     <header className="border-b border-[color-border] fixed top-0 w-full before:--header-bg-mask">
@@ -41,7 +41,7 @@ const Header = () => {
         </IconButton>
         <Drawer
           anchor="right"
-          open={open}
+          open={isOpen}
           onClose={toggleDrawer}
           PaperProps={{
             sx: { width: '60%' }
