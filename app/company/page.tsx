@@ -18,7 +18,7 @@ const data: DataType = {
 
 const Company = () => {
   return (
-    <main className="flex flex-col gap-[200px]">
+    <main className="space-y-48">
       <PageNav title={data.title} subTitle={data.subTitle} />
       <Purpose />
       <Profile />
