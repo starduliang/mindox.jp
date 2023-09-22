@@ -4,7 +4,7 @@ import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineC
 type DataType = {
   title: string
   subtitle: string
-  timelineData: {
+  items: {
     yearMonth: string
     event: string
   }[]
@@ -13,7 +13,7 @@ type DataType = {
 const data: DataType = {
   title: 'History',
   subtitle: '沿革',
-  timelineData: [
+  items: [
     { yearMonth: '2023.3', event: '社員採用' },
     { yearMonth: '2022.9', event: '会社設立' }
   ]
@@ -25,11 +25,11 @@ const History = (): JSX.Element => {
       <h1 className="text-center text-7xl font-bold">{data.title}</h1>
       <h2 className="mt-4 text-center text-lg">{data.subtitle}</h2>
       <Timeline position="alternate">
-        {data.timelineData.map((item, index) => (
+        {data.items.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineSeparator>
               <TimelineDot className="border-2 border-current bg-transparent" />
-              {index < data.timelineData.length - 1 && (
+              {index < data.items.length - 1 && (
                 <TimelineConnector
                   sx={{
                     bgcolor: 'transparent',
