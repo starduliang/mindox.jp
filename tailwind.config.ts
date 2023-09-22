@@ -15,8 +15,10 @@ const config: Config = {
       },
       colors: {
         '[color-primary]': '#4b68da',
-        '[color-border]': '#1a1a1a',
+        '[color-border]': '#2a2a2a',
         '[color-border-light]': '#2a2a2a',
+        '[color-border-lighter]': '#4a4a4a',
+        '[color-border-dark]': '#1a1a1a',
         '[color-bg]': '#101010',
         '[color-bg-dark]': '#0a0a0a',
         '[color-text-gray]': colors.gray[400]
