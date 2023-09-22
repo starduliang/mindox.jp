@@ -1,9 +1,9 @@
 import { Post } from './models/post'
 
-import Post1 from '../posts/1/page.mdx'
-import Post2 from '../posts/2/page.mdx'
-import Post3 from '../posts/3/page.mdx'
-import Post4 from '../posts/4/page.mdx'
+import Post1 from './posts/1/page.mdx'
+import Post2 from './posts/2/page.mdx'
+import Post3 from './posts/3/page.mdx'
+import Post4 from './posts/4/page.mdx'
 
 const titles = [
   'Hello World',
