@@ -59,7 +59,7 @@ const Header = () => {
             <li className="absolute right-8 bottom-8">
               <Link
                 href={'/contact'}
-                className="flex items-center  justify-center w-24 h-24  border-2 border-white rounded-full"
+                className="grid place-items-center w-24 h-24 border-2 border-white rounded-full"
                 onClick={toggleDrawer}
               >
                 Contact
