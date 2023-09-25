@@ -14,7 +14,7 @@ const Header = () => {
   const toggleDrawer = () => setIsOpen(!isOpen)
 
   return (
-    <header className="border-b border-[color-border] fixed top-0 w-full before:--header-bg-mask">
+    <header className="border-b border-[color-border] fixed top-0 w-full before:--header-bg-mask z-10">
       <div className="p-2 --center-content-container flex justify-between items-center ">
         <div className="flex gap-[80px] items-center">
           <Link href={'/'}>
@@ -31,7 +31,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="hidden md:block">
-          <Link href={'/contact'} className="flex p-6 --link-enhanced items-center gap-2">
+          <Link href={'/contact'} className="flex p-6 --link items-center gap-2">
             <ContactSupportIcon />
             Contact
           </Link>

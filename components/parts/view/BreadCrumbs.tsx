@@ -11,23 +11,21 @@ const BreadCrumbs = ({ pathname, pathToName }: { pathname?: string; pathToName?:
   const _pathname = usePathname()
   const pathnames = (pathname ?? _pathname).split('/').filter((x) => !!x)
   return (
-    <div role="presentation">
-      <MUIBreadcrumbs aria-label="breadcrumb">
-        <Link className="--link" href="/">
-          Home
-        </Link>
-        {pathnames.map((item, index) => {
-          const isLast = index === pathnames.length - 1
-          const title = pathToName?.[item] ?? _.capitalize(item)
-          const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
-          return (
-            <Link key={item} className={cn('--link', { '--active pointer-events-none': isLast })} href={routeTo}>
-              {title}
-            </Link>
-          )
-        })}
-      </MUIBreadcrumbs>
-    </div>
+    <MUIBreadcrumbs aria-label="breadcrumb">
+      <Link className="--link" href="/">
+        Home
+      </Link>
+      {pathnames.map((item, index) => {
+        const isLast = index === pathnames.length - 1
+        const title = pathToName?.[item] ?? _.capitalize(item)
+        const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
+        return (
+          <Link key={item} className={cn('--link', { '--active pointer-events-none': isLast })} href={routeTo}>
+            {title}
+          </Link>
+        )
+      })}
+    </MUIBreadcrumbs>
   )
 }
 

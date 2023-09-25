@@ -13,6 +13,19 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+
+    --md-width: 80%;
+    --md-interval: calc(var(--md-width) / 3);
+    --md-left-first: calc((100% - var(--md-width)) / 2);
+    --md-left-second: calc(var(--md-left-first) + var(--md-interval));
+    --md-left-third: calc(var(--md-left-first) + var(--md-interval) * 2);
+    --md-left-forth: calc(var(--md-left-first) + var(--md-interval) * 3);
+
+    --width: 90%;
+    --interval: calc(var(--width) / 2);
+    --left-first: calc((100% - var(--width)) / 2);
+    --left-second: calc(var(--left-first) + var(--interval));
+    --left-third: calc(var(--left-first) + var(--interval) * 2);
   }
 }
 
@@ -36,39 +49,16 @@ body {
     @apply text-white
   }
 
-  .--link-enhanced {
-    @apply --link
-  }
-
-  .--link-enhanced:hover {
-    @apply scale-110 text-[color-primary];
-  }
-
-  .--link-enhanced::after {
-    content: '>';
-    @apply invisible absolute right-0 transform translate-x-full;
-    @apply transition-all duration-300 ease-in-out;
-  }
-
-  .--link-enhanced:hover::after {
-    @apply visible;
-    @apply -translate-x-6;
-  }
-
   .--center-content-container {
     @apply max-w-screen-xl mx-auto
   }
 
   .--body-divider {
-    @apply content-[''] w-[1px] h-full absolute left-[8.35%] top-0 bg-[color-border] mix-blend-exclusion z-10
+    @apply content-[''] w-[1px] min-h-screen fixed top-0 bg-[color-border] mix-blend-exclusion -z-10
   }
 
   .--header-bg-mask {
     @apply content-[''] w-full h-full absolute left-0 top-0 bg-gradient-to-r from-[#1b1b1bb3] to-[#1b1b1b00] -z-10
-  }
-
-  .--absolute-x-center {
-    @apply absolute left-1/2 -translate-x-1/2
   }
 
   .--border {
@@ -77,5 +67,33 @@ body {
 
   .--border-light {
     @apply border border-[color-border-light]
+  }
+
+  .--md-left-1 {
+    @apply left-[--md-left-first]
+  }
+
+  .--md-left-2 {
+    @apply left-[--md-left-second]
+  }
+
+  .--md-left-3 {
+    @apply left-[--md-left-third]
+  }
+
+  .--md-left-4 {
+    @apply left-[--md-left-forth]
+  }
+
+  .--left-1 {
+    @apply left-[--left-first]
+  }
+
+  .--left-2 {
+    @apply left-[--left-second]
+  }
+
+  .--left-3 {
+    @apply left-[--left-third]
   }
 }

@@ -34,7 +34,7 @@ const Footer = ({ className }: { className?: string }) => {
           <ul key={index}>
             {group.map((link) => (
               <li key={link.name}>
-                <Link href={link.href} className="block p-6 --link-enhanced relative">
+                <Link href={link.href} className="block p-6 --link">
                   {link.name}
                 </Link>
               </li>
