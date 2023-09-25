@@ -1,26 +1,15 @@
 import { useState } from 'react'
 
-type AnyObject = {
-  [key: string]: any
-}
+type AnyObject = Record<string, any>
 
 const setNestedValue = (obj: AnyObject, path: string, value: any): void => {
-  const keys = path.split('.')
+  const keys = path.split(/[.[]]/).filter(Boolean)
   let current = obj
 
-  for (let i = 0; i < keys.length - 1; i++) {
-    const key = keys[i]
-
-    if (!isNaN(Number(keys[i + 1]))) {
-      if (!Array.isArray(current[key])) {
-        current[key] = []
-      }
-    } else if (!current[key]) {
-      current[key] = {}
-    }
-
+  keys.slice(0, -1).forEach((key, i) => {
+    current[key] = !isNaN(Number(keys[i + 1])) ? [] : current[key] || {}
     current = current[key]
-  }
+  })
 
   current[keys[keys.length - 1]] = value
 }
