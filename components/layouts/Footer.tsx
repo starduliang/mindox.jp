@@ -3,7 +3,7 @@
 import links from '@/components/config/links'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Container } from '@mui/material'
+import Container from './Container'
 import { useMediaQuery, useTheme } from '@mui/material'
 import ContactCard from '@/app/contact/ContactCard'
 
@@ -17,7 +17,7 @@ const Footer = ({ className }: { className?: string }) => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Container maxWidth="lg" className={'gap-10 flex flex-col gap-y-16 ' + className}>
+    <Container className={'gap-10 flex flex-col gap-y-16 ' + className}>
       <ContactCard />
       <div className="text-left grid grid-cols-1 md:grid-cols-3 text-4xl">
         <div className="py-4 px-8">

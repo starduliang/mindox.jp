@@ -1,9 +1,7 @@
-import { Container as MUIContainer } from '@mui/material'
+import cn from 'classnames'
 
 const Container = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <MUIContainer maxWidth="lg" className={className}>
-    {children}
-  </MUIContainer>
+  <div className={cn('--container md:--md-container', className ?? '')}>{children}</div>
 )
 
 export default Container

@@ -1,7 +1,6 @@
 'use client'
 
-import dayjs from 'dayjs'
-import { Card, CardContent, List, ListItem } from '@mui/material'
+import { List, ListItem, Paper } from '@mui/material'
 import PageNav from '@/components/layouts/PageNav'
 import { blogPosts } from '@/db/data'
 import Link from 'next/link'
@@ -10,6 +9,8 @@ import { useSearchParams } from 'next/navigation'
 import { Post } from '@/db/models/post'
 import PaginationScrollTop from '@/components/parts/button/PaginationScrollTop'
 import useNState from '@/components/hooks/useNState'
+import Image from 'next/image'
+import dayjs from 'dayjs'
 
 const ITEMS_PER_PAGE = 10
 
@@ -42,7 +43,7 @@ const Page = () => {
     }
 
     fetchPosts()
-  }, [state.page, pageQuery])
+  }, [state.page, pageQuery, state, setState, patchState])
 
   const getPostsAndCount = async (page: number) => {
     const getPaginationIndices = (page: number, pageSize: number) => {
@@ -63,15 +64,22 @@ const Page = () => {
       <List className="flex flex-col gap-y-4">
         {state.posts.map((item) => (
           <ListItem key={item.id}>
-            <Link className="--link w-full" href={`/blog/${item.id}`}>
-              <Card className="bg-transparent p-2">
-                <CardContent className="flex ">
-                  <div className="text-xl">{item?.title}</div>
-                  <div className="ml-auto text-xs text-[color-text-gray]">
-                    {dayjs(item.createdAt).format('YY.MM.DD')}
-                  </div>
-                </CardContent>
-              </Card>
+            <Link className="--link w-full" href={`/news/${item.id}`}>
+              <Paper className="p-6 flex flex-col gap-4 items-left md:flex-row md:space-x-4 md:items-center">
+                {item?.images?.[0] && (
+                  <Image
+                    className="rounded w-full md:w-1/4"
+                    src={item?.images?.[0]?.src}
+                    alt="post image"
+                    width={200}
+                    height={100}
+                  />
+                )}
+                <div className="grow text-xl h-full font-semibold">{item?.title}</div>
+                <div className="md:absolute top-6 right-6 text-xl text-[color-text-gray]">
+                  {dayjs(item.createdAt).format('YY.MM.DD')}
+                </div>
+              </Paper>
             </Link>
           </ListItem>
         ))}

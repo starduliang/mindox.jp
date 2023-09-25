@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Container from '@/components/layouts/Container'
 
 type DataType = {
   title: string
@@ -40,13 +41,13 @@ const data: DataType = {
 
 const Strength = () => (
   <>
-    <section className="grid md:grid-cols-2">
+    <Container className="grid md:grid-cols-2">
       <div>
         <div className="text-7xl font-bold">{data.title}</div>
         <div className="mt-8">{data.subtitle}</div>
       </div>
       <div>{data.description}</div>
-    </section>
+    </Container>
     <section>
       <ul className="space-y-48 mt-32">
         {data.items.map((item, index) => (
@@ -55,15 +56,15 @@ const Strength = () => (
             className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} rounded`}
           >
             <Image
-              className={`z-0 w-full md:w-8/12 md:ml-0 ${index % 2 === 0 ? '-ml-10' : 'ml-10'}`}
+              className={`relative  w-full md:w-8/12 md:ml-0 ${index % 2 === 0 ? 'md:right-0' : 'md:left-0'}`}
               src={item.imgSrc}
               alt={item.title}
               width={500}
               height={300}
             />
             <div
-              className={`relative md:absolute md:h-full md:-top-10 px-14 py-20 md:w-6/12 z-10  bg-[color-bg] ${
-                index % 2 === 0 ? 'left-0' : 'right-0'
+              className={`relative md:absolute h-[90%] md:h-full md:-top-10 px-14 py-20 md:w-6/12  bg-[color-bg] ${
+                index % 2 === 0 ? '' : ''
               }`}
             >
               <div className="absolute -top-16 right-10 text-8xl">{String(index + 1).padStart(2, '0')}</div>

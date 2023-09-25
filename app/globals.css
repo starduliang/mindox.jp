@@ -14,7 +14,8 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
 
-    --md-width: 80%;
+    --md-width: 82%;
+    --md-margin: calc((100% - var(--md-width)) / 2);
     --md-interval: calc(var(--md-width) / 3);
     --md-left-first: calc((100% - var(--md-width)) / 2);
     --md-left-second: calc(var(--md-left-first) + var(--md-interval));
@@ -22,6 +23,7 @@
     --md-left-forth: calc(var(--md-left-first) + var(--md-interval) * 3);
 
     --width: 90%;
+    --margin: calc((100% - var(--width)) / 2);
     --interval: calc(var(--width) / 2);
     --left-first: calc((100% - var(--width)) / 2);
     --left-second: calc(var(--left-first) + var(--interval));
@@ -54,7 +56,7 @@ body {
   }
 
   .--body-divider {
-    @apply content-[''] w-[1px] min-h-screen fixed top-0 bg-[color-border] mix-blend-exclusion -z-10
+    @apply content-[''] w-[1px] min-h-screen fixed top-0 bg-[color-border-dark] mix-blend-exclusion -z-10
   }
 
   .--header-bg-mask {
@@ -95,5 +97,13 @@ body {
 
   .--left-3 {
     @apply left-[--left-third]
+  }
+
+  .--md-container {
+    @apply ml-[--md-margin] mr-[--md-margin]
+  }
+
+  .--container {
+    @apply ml-[--margin] mr-[--margin]
   }
 }
