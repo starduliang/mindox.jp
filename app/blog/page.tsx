@@ -5,33 +5,44 @@ import { Card, CardContent, List, ListItem } from '@mui/material'
 import PageNav from '@/components/layouts/PageNav'
 import { blogPosts } from '@/db/data'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Post } from '@/db/models/post'
 import PaginationScrollTop from '@/components/parts/button/PaginationScrollTop'
+import useNState from '@/components/hooks/useNState'
 
 const ITEMS_PER_PAGE = 10
 
+type DataType = {
+  posts: Post[]
+  page: number
+  totalCount: number
+}
+
+const data: DataType = {
+  posts: [],
+  page: 1,
+  totalCount: 0
+}
+
 const Page = () => {
-  const [posts, setPosts] = useState<Post[]>([])
-  const [page, setPage] = useState(1)
-  const [totalCount, setTotalCount] = useState(blogPosts.length)
+  const { state, setState, patchState } = useNState<DataType>(data)
+
   const searchParams = useSearchParams()
   const pageQuery = searchParams.get('page')
 
   useEffect(() => {
     const fetchPosts = async () => {
       if (pageQuery) {
-        setPage(Number(pageQuery))
+        patchState('page', Number(pageQuery))
       }
 
-      const { posts, totalCount } = await getPostsAndCount(page)
-      setPosts(posts)
-      setTotalCount(totalCount)
+      const { posts, totalCount } = await getPostsAndCount(state.page)
+      setState({ ...state, posts, totalCount })
     }
 
     fetchPosts()
-  }, [page, pageQuery])
+  }, [state.page, pageQuery])
 
   const getPostsAndCount = async (page: number) => {
     const getPaginationIndices = (page: number, pageSize: number) => {
@@ -50,7 +61,7 @@ const Page = () => {
     <main className="flex flex-col gap-4">
       <PageNav title="Blog" subTitle="技術ブログ" />
       <List className="flex flex-col gap-y-4">
-        {posts.map((item) => (
+        {state.posts.map((item) => (
           <ListItem key={item.id}>
             <Link className="--link w-full" href={`/blog/${item.id}`}>
               <Card className="bg-transparent p-2">
@@ -65,11 +76,11 @@ const Page = () => {
           </ListItem>
         ))}
         <PaginationScrollTop
-          page={page}
-          totalCount={totalCount}
+          page={state.page}
+          totalCount={state.totalCount}
           itemsPerPage={ITEMS_PER_PAGE}
           onChange={(_, value) => {
-            setPage(value)
+            patchState('page', value)
           }}
         />
       </List>

@@ -1,5 +1,7 @@
-import GridLadder from '@/components/module/GridLadder'
 import Image from 'next/image'
+
+import useNState from '@/components/hooks/useNState'
+import GridLadder from '@/components/module/GridLadder'
 
 interface DataType {
   title: string
@@ -31,25 +33,28 @@ const data: DataType = {
   ]
 }
 
-const Services = () => (
-  <div className="mt-10">
-    <div className="grid md:grid-cols-2 items-center mb-16">
-      <div className="">
-        <div className="text-7xl font-semibold">{data.title} </div>
-        <div className="mt-4">{data.subtitle}</div>
-      </div>
-      <div>{data.description}</div>
-    </div>
-    <GridLadder>
-      {data.items.map((item, index) => (
-        <div key={index}>
-          <Image className="rounded" src={item.imgSrc} alt={item.title} width={500} height={300} />
-          <h2 className="mt-4 font-semibold">{item.title}</h2>
-          <p className="mt-6 text-sm">{item.description}</p>
-        </div>
-      ))}
-    </GridLadder>
-  </div>
-)
+const Services = () => {
+  const { state } = useNState<DataType>(data)
 
+  return (
+    <div className="mt-10">
+      <div className="grid md:grid-cols-2 items-center mb-16">
+        <div className="">
+          <div className="text-7xl font-semibold">{state.title} </div>
+          <div className="mt-4">{state.subtitle}</div>
+        </div>
+        <div>{state.description}</div>
+      </div>
+      <GridLadder>
+        {state.items.map((item, index) => (
+          <div key={index}>
+            <Image className="rounded" src={item.imgSrc} alt={item.title} width={500} height={300} />
+            <h2 className="mt-4 font-semibold">{item.title}</h2>
+            <p className="mt-6 text-sm">{item.description}</p>
+          </div>
+        ))}
+      </GridLadder>
+    </div>
+  )
+}
 export default Services

@@ -1,3 +1,4 @@
+import useNState from '@/components/hooks/useNState'
 import React from 'react'
 
 type DataType = {
@@ -36,9 +37,11 @@ const data: DataType = {
 }
 
 const Purpose = () => {
+  const { state } = useNState<DataType>(data)
+
   return (
     <div className={'grid md:grid-cols-3 gap-14 md:gap-4 '}>
-      {data.items.map((group, index) => (
+      {state.items.map((group, index) => (
         <div key={index} className="relative text-center p-6 rounded shadow --border">
           <div className="text-5xl absolute -top-8 right-4">{String(index + 1).padStart(2, '0')}</div>
           <h2 className="text-4xl font-bold">{group.title}</h2>

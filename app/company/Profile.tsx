@@ -1,4 +1,5 @@
 import React from 'react'
+import useNState from '@/components/hooks/useNState'
 
 type DataType = {
   title: string
@@ -27,13 +28,15 @@ const data: DataType = {
 }
 
 const Profile = () => {
+  const { state } = useNState<DataType>(data)
+
   return (
     <div>
-      <h1 className="text-center text-7xl font-bold">{data.title}</h1>
-      <h2 className="mt-4 text-center text-lg">{data.subtitle}</h2>
+      <h1 className="text-center text-7xl font-bold">{state.title}</h1>
+      <h2 className="mt-4 text-center text-lg">{state.subtitle}</h2>
       <table className="table-auto bg-transparent mt-20">
         <tbody>
-          {data.items.map((item, index) => (
+          {state.items.map((item, index) => (
             <tr key={index} className="border-b border-[color-border-lighter] border-b-1">
               <th className="py-10 border-b border-gray-400 font-normal text-left">
                 <div className="w-24 md:w-48 text-base ">{item.name}</div>

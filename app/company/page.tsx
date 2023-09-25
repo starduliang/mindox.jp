@@ -5,6 +5,7 @@ import PageNav from '@/components/layouts/PageNav'
 import Profile from './Profile'
 import History from './History'
 import Purpose from './Purpose'
+import useNState from '@/components/hooks/useNState'
 
 type DataType = {
   title: string
@@ -17,9 +18,11 @@ const data: DataType = {
 }
 
 const Company = () => {
+  const { state } = useNState<DataType>(data)
+
   return (
     <main className="space-y-48">
-      <PageNav title={data.title} subTitle={data.subTitle} />
+      <PageNav title={state.title} subTitle={state.subTitle} />
       <Purpose />
       <Profile />
       <History />

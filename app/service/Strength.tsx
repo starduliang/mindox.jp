@@ -1,8 +1,9 @@
 import React from 'react'
 
 import ContainerBoarded from '@/components/module/ContainerBoarded'
+import useNState from '@/components/hooks/useNState'
 
-interface dataType {
+interface DataType {
   title: string
   subtitle: string
   items: {
@@ -12,7 +13,7 @@ interface dataType {
   }[]
 }
 
-const data: dataType = {
+const data: DataType = {
   title: 'Strength',
   subtitle: 'Mindox株式会社が選ばれる理由',
   items: [
@@ -37,22 +38,25 @@ const data: dataType = {
   ]
 }
 
-const Strength = () => (
-  <div>
-    <div className="text-center">
-      <div className="text-7xl font-bold">{data.title}</div>
-      <div className="text-lg mt-4">{data.subtitle}</div>
-    </div>
-    <ContainerBoarded className="grid grid-cols-1 md:grid-cols-3 mt-20">
-      {data.items.map((item, index) => (
-        <div key={index} className="2 px-6 py-8 text-center">
-          <h2 className="text-2xl font-bold">{item.title}</h2>
-          <h3 className="text-xl mt-[80px]">{item.subtitle}</h3>
-          <p className="text-sm mt-6 leading-loose">{item.description}</p>
-        </div>
-      ))}
-    </ContainerBoarded>
-  </div>
-)
+const Strength = () => {
+  const { state } = useNState<DataType>(data)
 
+  return (
+    <div>
+      <div className="text-center">
+        <div className="text-7xl font-bold">{state.title}</div>
+        <div className="text-lg mt-4">{state.subtitle}</div>
+      </div>
+      <ContainerBoarded className="grid grid-cols-1 md:grid-cols-3 mt-20">
+        {state.items.map((item, index) => (
+          <div key={index} className="2 px-6 py-8 text-center">
+            <h2 className="text-2xl font-bold">{item.title}</h2>
+            <h3 className="text-xl mt-[80px]">{item.subtitle}</h3>
+            <p className="text-sm mt-6 leading-loose">{item.description}</p>
+          </div>
+        ))}
+      </ContainerBoarded>
+    </div>
+  )
+}
 export default Strength

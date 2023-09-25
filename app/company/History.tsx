@@ -1,5 +1,6 @@
 import React from 'react'
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab'
+import useNState from '@/components/hooks/useNState'
 
 type DataType = {
   title: string
@@ -20,16 +21,18 @@ const data: DataType = {
 }
 
 const History = (): JSX.Element => {
+  const { state } = useNState<DataType>(data)
+
   return (
     <div>
-      <h1 className="text-center text-7xl font-bold">{data.title}</h1>
-      <h2 className="mt-4 text-center text-lg">{data.subtitle}</h2>
+      <h1 className="text-center text-7xl font-bold">{state.title}</h1>
+      <h2 className="mt-4 text-center text-lg">{state.subtitle}</h2>
       <Timeline position="alternate">
-        {data.items.map((item, index) => (
+        {state.items.map((item, index) => (
           <TimelineItem key={index}>
             <TimelineSeparator>
               <TimelineDot className="border-2 border-current bg-transparent" />
-              {index < data.items.length - 1 && (
+              {index < state.items.length - 1 && (
                 <TimelineConnector
                   sx={{
                     bgcolor: 'transparent',
