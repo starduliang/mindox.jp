@@ -51,22 +51,15 @@ const Strength = () => (
     <section>
       <ul className="space-y-48 mt-32">
         {data.items.map((item, index) => (
-          <li
-            key={index}
-            className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'} rounded`}
-          >
+          <li key={index} className="group relative rounded">
             <Image
-              className={`relative  w-full md:w-8/12 md:ml-0 ${index % 2 === 0 ? 'md:right-0' : 'md:left-0'}`}
+              className="group-[:nth-child(odd)]:ml-auto group-[:nth-child(even)]:mr-auto group-[:nth-child(odd)]:md:ml-[--md-1-margin-1-interval] group-[:nth-child(odd)]:md:w-[--md-1-margin-2-interval] group-[:nth-child(even)]:md:w-[--md-1-margin-2-interval] w-[90vw]"
               src={item.imgSrc}
               alt={item.title}
               width={500}
               height={300}
             />
-            <div
-              className={`relative md:absolute h-[90%] md:h-full md:-top-10 px-14 py-20 md:w-6/12  bg-[color-bg] ${
-                index % 2 === 0 ? '' : ''
-              }`}
-            >
+            <div className="--container md:ml-0 md:mr-0 group-[:nth-child(odd)]:md:left-[--md-margin] group-[:nth-child(even)]:md:right-[--md-margin] relative px-14 py-20 bg-[color-bg] md:absolute md:-top-10 md:w-1/2 md:h-[400px]">
               <div className="absolute -top-16 right-10 text-8xl">{String(index + 1).padStart(2, '0')}</div>
               <div className="text-2xl">{item.title}</div>
               <div className="mt-8">{item.description}</div>

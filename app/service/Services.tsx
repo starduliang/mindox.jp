@@ -25,7 +25,7 @@ const data: DataType = {
       description: '情報システムに関わる製品、サービスの提供します。'
     },
     {
-      imgSrc: '/services_1.png',
+      imgSrc: '/services_1.jpg',
       title: 'IT人材派遣、紹介',
       description:
         'これまで多くの企業は自社システムの強化やユニークな商品の開発に欠かせない、優秀なIT人材を積極的に派遣、紹介します。'

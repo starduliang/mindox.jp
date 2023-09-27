@@ -13,10 +13,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={cn(
           inter.className,
-          'before:--body-divider before:--left-1  before:md:--md-left-1 after:--body-divider after:--left-3 after:md:--md-left-4'
+          'before:--body-divider before:left-[--margin]  before:md:left-[--md-margin] after:--body-divider after:left-[--1-margin-2-interval] after:md:left-[--md-1-margin-3-interval]'
         )}
       >
-        <div className="before:--body-divider before:--left-2 before:md:--md-left-2 after:--body-divider after:md:--md-left-3">
+        <div className="before:--body-divider before:left-[--1-margin-1-interval] before:md:left-[--md-1-margin-1-interval] after:--body-divider after:md:left-[--md-1-margin-2-interval]">
           <Theme>
             <AppProvider>{children}</AppProvider>
           </Theme>
