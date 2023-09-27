@@ -2,10 +2,10 @@ import Container from './Container'
 import Footer from './Footer'
 import Header from './Header'
 
-const DefaultContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => (
+const DefaultContainer = ({ children }: { children: React.ReactNode }) => (
   <>
     <Header />
-    <Container className={`mt-56 ${className}`}>{children}</Container>
+    <Container className="mt-56">{children}</Container>
     <Footer className="mt-56" />
   </>
 )
