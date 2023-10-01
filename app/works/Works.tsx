@@ -1,5 +1,6 @@
 import useNState from '@/components/hooks/useNState'
 import GridLadder from '@/components/module/GridLadder'
+import ImageHoverMask from '@/components/module/ImageHoverMask'
 import Image from 'next/image'
 
 interface DataType {
@@ -22,7 +23,9 @@ const Works = () => {
       <GridLadder>
         {state.items.map((card, index) => (
           <div key={index}>
-            <Image className="rounded" src={card.imgSrc} alt={card.title} width={500} height={300} />
+            <ImageHoverMask>
+              <Image className="rounded" src={card.imgSrc} alt={card.title} width={500} height={300} />
+            </ImageHoverMask>
             <h2 className="mt-6 text-xl font-bold">{card.title}</h2>
             <p className="mt-2 text-lg">{card.description}</p>
           </div>

@@ -24,7 +24,9 @@ const Company = () => {
     <main className="space-y-48">
       <PageNav title={state.title} subTitle={state.subTitle} />
       <Purpose />
-      <Profile />
+      <div className="px-0 md:px-20 lg:px-48">
+        <Profile />
+      </div>
       <History />
     </main>
   )
