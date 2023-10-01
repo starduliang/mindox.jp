@@ -47,7 +47,7 @@ const Strength = () => (
         <div className="text-7xl font-bold">{data.title}</div>
         <div className="mt-8">{data.subtitle}</div>
         <div>
-          <Link href="/services" className="block py-6 mt-6 --link">
+          <Link href="/service" className="block py-6 mt-6 --link">
             View More ▶︎
           </Link>
         </div>
