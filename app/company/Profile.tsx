@@ -17,7 +17,8 @@ const data: DataType = {
     { name: '社名', value: 'Mindox株式会社' },
     { name: '所在地', value: '東京都渋谷区道玄坂1丁目10番8号渋谷道玄坂東急ビル2F−C' },
     { name: '代表取締役', value: '杜梁' },
-    { name: '連絡先', value: 'TEL：070-1321-1199' },
+    { name: 'E-mail', value: 'info@mindox.jp' },
+    { name: '連絡先', value: '070-1321-1199' },
     { name: '资本金', value: '300万円' },
     {
       name: '事業内容',
