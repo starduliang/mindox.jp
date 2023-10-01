@@ -23,7 +23,7 @@ const data: DataType = {
       title: '安心率UP⤴',
       description:
         '初めてのお客様も安心！専門用語を使わずにお客様の大切な時間をお預かり、最速で高品質なサービスを提供いたします。初めてのお客様に向けてFaQもご用意しております。',
-      imgSrc: '/home_0.jpg'
+      imgSrc: '/home_0.jpeg'
     },
     {
       title: 'コスト削減率大増加⤴',
