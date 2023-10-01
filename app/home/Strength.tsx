@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Container from '@/components/layouts/Container'
+import Link from 'next/link'
 
 type DataType = {
   title: string
@@ -22,31 +23,37 @@ const data: DataType = {
       title: '安心率UP⤴',
       description:
         '初めてのお客様も安心！専門用語を使わずにお客様の大切な時間をお預かり、最速で高品質なサービスを提供いたします。初めてのお客様に向けてFaQもご用意しております。',
-      imgSrc: '/20230901_0.jpeg'
+      imgSrc: '/home_0.jpg'
     },
     {
       title: 'コスト削減率大増加⤴',
       description:
         '品質を担保してコスト削減！開発実績を誇るMindoxの品質・プロセスを仕組化し、トレーニングをしております。優秀なエンジニアが在籍しております。',
-      imgSrc: '/20230901_0.jpeg'
+      imgSrc: '/home_1.jpg'
     },
     {
       title: 'プロジェクト実績数⤴',
       description:
         'プロジェクト実績数⤴ 数々のプロジェクトを支援した実績。現在の開発プロジェクトに問題がありお困りのお客様、これからビジネスを立ち上げようと考えているお客様、どんなことでもお問合せください。',
-      imgSrc: '/20230901_0.jpeg'
+      imgSrc: '/home_2.jpg'
     }
   ]
 }
 
 const Strength = () => (
   <>
-    <Container className="grid md:grid-cols-2">
+    <Container className="grid md:grid-cols-2 relative">
       <div>
         <div className="text-7xl font-bold">{data.title}</div>
         <div className="mt-8">{data.subtitle}</div>
+        <div>
+          <Link href="/services" className="block py-6 mt-6 --link">
+            View More ▶︎
+          </Link>
+        </div>
       </div>
-      <div>{data.description}</div>
+      <div className="bg-opacity-0 pl-8">{data.description}</div>
+      <Image className="absolute -right-4 " src="/strength_0.png" alt={data.title} width={700} height={300} />
     </Container>
     <section>
       <ul className="space-y-48 mt-32">
