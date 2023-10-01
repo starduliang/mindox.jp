@@ -6,6 +6,7 @@ import Post from '@/components/module/post/Post'
 import BreadCrumbs from '@/components/parts/view/BreadCrumbs'
 import { posts } from '@/db/data'
 import Link from 'next/link'
+import { Paper } from '@mui/material'
 
 const Page = ({ params }: { params: { id: string } }) => {
   const pathname = usePathname()
@@ -16,9 +17,9 @@ const Page = ({ params }: { params: { id: string } }) => {
   return (
     <main>
       <BreadCrumbs pathname={pathname} pathToName={{ [post.id ?? '']: post.title, news: 'News List' }} />
-      <div className="bg-[color-bg-dark] p-16 mt-8">
+      <Paper className="p-16 mt-8">
         <Post data={post!} className="mt-8" />
-      </div>
+      </Paper>
     </main>
   )
 }

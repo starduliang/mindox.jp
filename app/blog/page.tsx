@@ -11,6 +11,7 @@ import PaginationScrollTop from '@/components/parts/button/PaginationScrollTop'
 import useNState from '@/components/hooks/useNState'
 import Image from 'next/image'
 import dayjs from 'dayjs'
+import HoverMask from '@/components/module/HoverMask'
 
 const ITEMS_PER_PAGE = 10
 
@@ -64,22 +65,24 @@ const Page = () => {
       <List className="flex flex-col gap-y-4">
         {state.posts.map((item) => (
           <ListItem key={item.id}>
-            <Link className="--link w-full" href={`/news/${item.id}`}>
-              <Paper className="p-6 flex flex-col gap-4 items-left md:flex-row md:space-x-4 md:items-center">
-                {item?.images?.[0] && (
-                  <Image
-                    className="rounded w-full md:w-1/4"
-                    src={item?.images?.[0]?.src}
-                    alt="post image"
-                    width={200}
-                    height={100}
-                  />
-                )}
-                <div className="grow text-xl h-full font-semibold">{item?.title}</div>
-                <div className="md:absolute top-6 right-6 text-xl text-[color-text-gray]">
-                  {dayjs(item.createdAt).format('YY.MM.DD')}
-                </div>
-              </Paper>
+            <Link className="--link w-full" href={`/blog/${item.id}`}>
+              <HoverMask>
+                <Paper className="p-6 flex flex-col gap-4 items-left md:flex-row md:space-x-4 md:items-center">
+                  {item?.images?.[0] && (
+                    <Image
+                      className="rounded w-full md:w-1/4"
+                      src={item?.images?.[0]?.src}
+                      alt="post image"
+                      width={200}
+                      height={100}
+                    />
+                  )}
+                  <div className="grow text-xl h-full font-semibold">{item?.title}</div>
+                  <div className="md:absolute top-6 right-6 text-xl text-[color-text-gray]">
+                    {dayjs(item.createdAt).format('YY.MM.DD')}
+                  </div>
+                </Paper>
+              </HoverMask>
             </Link>
           </ListItem>
         ))}

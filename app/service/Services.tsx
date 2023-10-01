@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import useNState from '@/components/hooks/useNState'
 import GridLadder from '@/components/module/GridLadder'
-import ImageHoverMask from '@/components/module/ImageHoverMask'
+import HoverMask from '@/components/module/HoverMask'
 
 interface DataType {
   title: string
@@ -49,9 +49,9 @@ const Services = () => {
       <GridLadder>
         {state.items.map((item, index) => (
           <div key={index}>
-            <ImageHoverMask>
+            <HoverMask>
               <Image className="rounded" src={item.imgSrc} alt={item.title} width={500} height={300} />
-            </ImageHoverMask>
+            </HoverMask>
             <h2 className="mt-4 font-semibold">{item.title}</h2>
             <p className="mt-6 text-sm">{item.description}</p>
           </div>
