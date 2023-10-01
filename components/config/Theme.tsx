@@ -17,6 +17,15 @@ const darkTheme = createTheme({
           }
         }
       }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#4b68da'
+          }
+        }
+      }
     }
   }
 })
