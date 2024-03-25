@@ -17,24 +17,24 @@ const data: DataType = {
   title: 'Strength',
   subtitle: 'Mindoxの強み',
   description:
-    '当社は高度な情報技術と深い業務知識を活用してお客様へ最大限に貢献します。お客様のプライバシーを重視、情報セキュリティをビジネス原点として会社理念に浸透します。当社の業務はコンピュータのソフトウェアの企画、研究、開発、設計、製造、販売、保守、リース並びにそれらに関するコンサルティング業務、またはインターネット等の通信ネットワーク、電子技術を利用した各種情報提供サービス及び情報収集サービスを請け負います。各サービスについてお気軽にお問い合わせください。',
+    '当社は、React.jsとNext.jsの開発に特化し、独自の創造力と革新性を活かして、迅速かつ優れた品質でプロジェクトを立ち上げます。クライアントのニーズに柔軟に対応し、常に最新の技術トレンドにアンテナを張っています。',
   items: [
     {
-      title: '安心率UP⤴',
+      title: 'フロントエンド開発が強みです',
       description:
-        '初めてのお客様も安心！専門用語を使わずにお客様の大切な時間をお預かり、最速で高品質なサービスを提供いたします。初めてのお客様に向けてFaQもご用意しております。',
+        '当社は、React.jsを活用した革新的なフロントエンド開発に専念しています。我々は、React.jsを中心に据えた高品質なWebアプリケーションの構築に注力し、これが私たちの強みです。 当社の開発チームは、React.jsのエキスパートであり、幅広い業界での経験を持っています。最新の技術を駆使し、お客様のニーズに応じた最適なソリューションを提供いたします。',
       imgSrc: '/home_0.jpeg'
     },
     {
-      title: 'コスト削減率大増加⤴',
+      title: 'コスト削減率増加',
       description:
-        '品質を担保してコスト削減！開発実績を誇るMindoxの品質・プロセスを仕組化し、トレーニングをしております。優秀なエンジニアが在籍しております。',
+        '当社の開発プロセスは、迅速なプロトタイピングから本番環境への展開までを効率的に行います。お客様との密接なコミュニケーションを大切にし、常に品質向上に取り組んでいます。',
       imgSrc: '/home_1.jpg'
     },
     {
-      title: 'プロジェクト実績数⤴',
+      title: 'プロジェクト実績多数',
       description:
-        'プロジェクト実績数⤴ 数々のプロジェクトを支援した実績。現在の開発プロジェクトに問題がありお困りのお客様、これからビジネスを立ち上げようと考えているお客様、どんなことでもお問合せください。',
+        '当社のReact.js開発実績には、さまざまな分野のプロジェクトが含まれています。これらのプロジェクトは、革新的で使いやすいアプリケーションとして市場で高い評価を受けています。',
       imgSrc: '/home_2.jpg'
     }
   ]
@@ -69,7 +69,7 @@ const Strength = () => (
             <div className="--container md:ml-0 md:mr-0 group-[:nth-child(odd)]:md:left-[--md-margin] group-[:nth-child(even)]:md:right-[--md-margin] relative px-14 py-20 bg-[color-bg] md:absolute md:-top-10 md:w-1/2 md:h-[400px]">
               <div className="absolute -top-16 right-10 text-8xl">{String(index + 1).padStart(2, '0')}</div>
               <div className="text-2xl">{item.title}</div>
-              <div className="mt-8">{item.description}</div>
+              <div className="mt-8 leading-relaxed">{item.description}</div>
             </div>
           </li>
         ))}

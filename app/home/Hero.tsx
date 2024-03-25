@@ -6,7 +6,7 @@ type DataType = {
 }
 
 const data: DataType = {
-  title: 'Advancing\n\nThrough\n\nEmerging TECH',
+  title: 'Advancing\n\nWith\n\nNew TECH',
   subTitle: '進化するテクノロジーで革命を促す'
 }
 
@@ -14,11 +14,11 @@ const Hero = () => (
   <section className="mb-56 md:mb-0">
     <ul className="absolute left-[--margin] md:left-[--md-margin] top-24 md:top-36 z-10">
       {data.title.split('\n\n').map((item, i) => (
-        <li key={i} className="text-[12vw] md:text-[4vw] font-bold leading-tight">
+        <li key={i} className="text-[12vw] md:text-[3.5vw] font-bold leading-tight">
           {item}
         </li>
       ))}
-      <li className="text-[4vw] md:text-[1.5vw] py-4">{data.subTitle}</li>
+      <li className="text-[4vw] md:text-[1.2vw] py-4">{data.subTitle}</li>
     </ul>
     <div className="relative">
       <Image
